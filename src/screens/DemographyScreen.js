@@ -1,4 +1,4 @@
-import { ButtonBase, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import CustomButtonV2 from "../components/CustomButtonV2";
@@ -6,9 +6,8 @@ import InputWithLabel from "../components/InputWithLabel";
 import TopMenu from "../components/TopMenu";
 import theme from "../theme";
 import { useAuthContext } from "../context/AuthContext";
-import { ACCESS_TOKEN } from "../utils/LocalStorageNames";
-import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import "react-datepicker/dist/react-datepicker.css";
 
 const param = {
   User_id: "",
@@ -189,6 +188,7 @@ const DemographyScreen = () => {
                       setInput({ ...input, Tanggal_lahir: value })
                     }
                   />
+
                   <InputWithLabel
                     label={"Agama"}
                     value={input.Agama}

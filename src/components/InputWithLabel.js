@@ -1,5 +1,7 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const InputWithLabel = ({
   label,
@@ -9,6 +11,8 @@ const InputWithLabel = ({
   widthLabel,
   type,
   maxLength,
+  isCalendar = false,
+  startDate = new Date(),
 }) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
@@ -26,19 +30,27 @@ const InputWithLabel = ({
         </Typography>
       )}
 
-      <input
-        type={type || "text"}
-        value={value}
-        onChange={(event) => onChangeInput(event.target.value)}
-        style={{
-          background: "#F1F2F4",
-          border: "1px solid #000000",
-          boxSizing: "border-box",
-          padding: 4,
-          width: "100%",
-        }}
-        maxLength={maxLength}
-      />
+      {isCalendar ? (
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => onChangeInput(date)}
+          className="tanggal"
+        />
+      ) : (
+        <input
+          type={type || "text"}
+          value={value}
+          onChange={(event) => onChangeInput(event.target.value)}
+          style={{
+            background: "#F1F2F4",
+            border: "1px solid #000000",
+            boxSizing: "border-box",
+            padding: 4,
+            width: "100%",
+          }}
+          maxLength={maxLength}
+        />
+      )}
     </Box>
   );
 };
