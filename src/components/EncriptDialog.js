@@ -2,7 +2,6 @@ import { Modal, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import CustomButton from "./CustomButton";
 import CustomButtonV2 from "./CustomButtonV2";
 import InputWithLabel from "./InputWithLabel";
 
@@ -25,7 +24,7 @@ const useStyles = makeStyles({
 
 const EncriptDialog = ({ open, handleClose }) => {
   const [enkripsi, setEnkripsi] = useState(initialEnkripsi);
-  const [resultEnkripsi, setResultEnkripsi] = useState(initialEnkripsi);
+  // const [resultEnkripsi, setResultEnkripsi] = useState(initialEnkripsi);
   const [pemFile, setPemFile] = useState(null);
 
   const classes = useStyles();
@@ -82,7 +81,7 @@ const EncriptDialog = ({ open, handleClose }) => {
                 }
               />
               =
-              <InputWithLabel showLabel={false} value={resultEnkripsi.nik} />
+              {/* <InputWithLabel showLabel={false} value={resultEnkripsi.nik} /> */}
             </Box>
             <Box
               sx={{
@@ -105,10 +104,10 @@ const EncriptDialog = ({ open, handleClose }) => {
                 }
               />
               =
-              <InputWithLabel
+              {/* <InputWithLabel
                 showLabel={false}
                 value={resultEnkripsi.user_id}
-              />
+              /> */}
             </Box>
             <Box
               sx={{
@@ -131,10 +130,10 @@ const EncriptDialog = ({ open, handleClose }) => {
                 }
               />
               =
-              <InputWithLabel
+              {/* <InputWithLabel
                 showLabel={false}
                 value={resultEnkripsi.password}
-              />
+              /> */}
             </Box>
 
             <Box
