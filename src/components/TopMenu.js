@@ -135,7 +135,8 @@ const TopMenu = (props) => {
               onClose={handleClose}
               TransitionComponent={Fade}
             >
-              {urlEndpoint.ocr && (
+              {console.log("url endpoint ", urlEndpoint)}
+              {/* {urlEndpoint.ocr && (
                 <MenuItem onClick={() => handleClose("ocr")}>OCR</MenuItem>
               )}
               {urlEndpoint.biometric && (
@@ -155,7 +156,7 @@ const TopMenu = (props) => {
 
               <MenuItem onClick={() => handleClose("local-verify")}>
                 Local Verify
-              </MenuItem>
+              </MenuItem> */}
 
               <MenuItem onClick={() => handleClose("demography")}>
                 POC Demography
